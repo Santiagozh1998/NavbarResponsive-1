@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <title>Navbar</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="logo" href="/">
+                <strong>Navbar</strong>
+            </a>
+            <input type="checkbox" id="res-menu">   
+            <label for="res-menu">
+                <i class="fa fa-bars" id="sign-one"></i>
+                <i class="fa fa-times" id="sign-two"></i>
+            </label>
+            <ul>
+                <li><a onclick="handlerCheck()" href="#">Sobre mi</a></li>
+                <li><a onclick="handlerCheck()" href="#">Proyectos</a></li>
+                <li><a onclick="handlerCheck()" href="#">Contactame</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script src="https://use.fontawesome.com/c357e01220.js"></script>
+    <script>
+        const handlerCheck = () => {
+
+            if(screen.width <= 800) {
+
+                let checked = document.getElementById("res-menu").checked == true;
+                
+                if(checked) {
+                    document.getElementById("res-menu").checked = false;
+                }
+            }
+        }
+
+        window.addEventListener("scroll", function handlerScroll() {
+            console.log(window.scrollY)
+            if(screen.width <= 800) {
+
+                if(window.scrollY != 0) {
+                    document.getElementById("res-menu").checked = false;
+                }
+
+                
+            }
+        })
+    </script>
+</body>
+</html>
